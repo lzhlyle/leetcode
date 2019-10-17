@@ -42,19 +42,17 @@ package com.lzhlyle.leetcode.recite.no26;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-public class RemoveDuplicatesFromSortedArray {
+public class RemoveDuplicatesFromSortedArray_2 {
     public int removeDuplicates(int[] nums) {
         if (nums == null) return 0;
-        if (nums.length <= 1) return nums.length;
+        if (nums.length < 2) return nums.length;
 
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[i] != nums[j]) {
-                i++;
-                nums[i] = nums[j];
-            }
+        int count = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] == nums[i]) count++;
+            else nums[i - count] = nums[i];
         }
-        return i + 1;
+        return nums.length - count;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no26;
+package com.lzhlyle.leetcode.self.no26;
 
 //给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
 //
@@ -45,16 +45,14 @@ package com.lzhlyle.leetcode.recite.no26;
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
         if (nums == null) return 0;
-        if (nums.length <= 1) return nums.length;
+        if (nums.length < 2) return nums.length;
 
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[i] != nums[j]) {
-                i++;
-                nums[i] = nums[j];
-            }
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i - 1] == nums[i]) count++;
+            else nums[i - count] = nums[i];
         }
-        return i + 1;
+        return nums.length - count;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
