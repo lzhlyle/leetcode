@@ -14,17 +14,27 @@ package com.lzhlyle.leetcode.tomorrow;
 //
 // Related Topics 数组 双指针
 
-
+// [283. move zero](https://leetcode-cn.com/problems/move-zeroes/)
 //leetcode submit region begin(Prohibit modification and deletion)
-class MoveZeros {
+class MoveZeroes {
     public static void main(String[] args) {
         int[] nums = {0, 1, 0, 3, 12};
 
-        new MoveZeros().moveZeroes(nums);
+        new MoveZeroes().moveZeroes(nums);
     }
 
     public void moveZeroes(int[] nums) {
+        if (nums == null || nums.length == 0) return;
 
+        int nonZero = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[nonZero];
+                nums[nonZero] = nums[i];
+                nums[i] = temp;
+                nonZero++;
+            }
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
