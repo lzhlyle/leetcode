@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no15;
+package com.lzhlyle.leetcode.tomorrow.no15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
-        if (nums == null || nums.length < 2) return Collections.emptyList();
+        if (nums == null || nums.length < 3) return Collections.emptyList();
 
         Arrays.sort(nums);
 
@@ -15,15 +15,14 @@ public class ThreeSum {
         for (int i = 0; i < nums.length - 2; i++) {
             if (nums[i] > 0) return list;
 
-            // duplicate in i
+            // skip duplicate nums
             if (i > 0 && nums[i] == nums[i - 1]) continue;
 
-            // left, right
             int left = i + 1;
             int right = nums.length - 1;
             if (nums[right] < 0) return list;
 
-            // move
+            // look up
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
                 if (sum < 0) {
@@ -33,7 +32,7 @@ public class ThreeSum {
                 } else {
                     list.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
-                    // duplicate in left, right
+                    // skip duplicate nums
                     while (left < right && nums[left] == nums[left + 1]) left++;
                     while (left < right && nums[right] == nums[right - 1]) right--;
 
