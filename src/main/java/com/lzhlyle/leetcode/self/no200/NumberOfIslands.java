@@ -3,6 +3,7 @@ package com.lzhlyle.leetcode.self.no200;
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {
         // base condition
+        if (grid.length <= 0 || grid[0].length <= 0) return 0;
 
         int count = 0;
 

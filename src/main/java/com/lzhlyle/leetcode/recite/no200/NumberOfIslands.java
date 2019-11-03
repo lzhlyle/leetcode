@@ -1,6 +1,7 @@
 package com.lzhlyle.leetcode.recite.no200;
 
 public class NumberOfIslands {
+    // dfs
     public int numIslands(char[][] grid) {
         // base condition
         if (grid.length <= 0 || grid[0].length <= 0) return 0;
