@@ -67,7 +67,7 @@ public class WordLadder_5 {
 
     public static void main(String[] args) {
         int res = new WordLadder_5().ladderLength("hit", "cog",
-                Arrays.asList("hot", "dot", "dog", "lot", "log"));
+                Arrays.asList("hit", "hot", "dot", "dog", "lot", "log", "cog"));
         System.out.println(res);
     }
 }

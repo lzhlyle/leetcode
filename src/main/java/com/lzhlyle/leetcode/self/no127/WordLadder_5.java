@@ -30,10 +30,10 @@ public class WordLadder_5 {
         for (String beginWord : beginSet) {
             char[] chars = beginWord.toCharArray();
             // iter for every char
-            for (int i = 0; i < chars.length; i++) {
+            for (int i = 0; i < chars.length; i++) { // O(k）
                 char temp = chars[i];
                 // replace every letter
-                for (char ch = 'a'; ch < 'z'; ch++) {
+                for (char ch = 'a'; ch < 'z'; ch++) { // O(1) 都是26遍
                     chars[i] = ch;
                     String newWord = String.valueOf(chars);
                     if (!meets.contains(newWord)) continue;
