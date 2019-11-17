@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.self.no64;
 
-public class minimumPathSum {
+public class MinimumPathSum {
     public int minPathSum(int[][] grid) {
         int width = grid.length;
         int height = grid[0].length;
