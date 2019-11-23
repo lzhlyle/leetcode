@@ -1,10 +1,15 @@
-package com.lzhlyle.templates;
+package com.lzhlyle.templates.algorithm;
 
 import java.util.*;
 
 public class DFS {
     Set<Object> visited = new HashSet<>();
 
+    /**
+     * 深度优先 - 递归
+     *
+     * @param node
+     */
     public void dfsWithRecursion(Object node) {
         // terminator
         if (visited.contains(node)) return;
@@ -21,6 +26,11 @@ public class DFS {
         // reverse state
     }
 
+    /**
+     * 深度优先 - 栈
+     *
+     * @param node
+     */
     public void dfsWithStack(Object node) {
         Stack<Object> stack = new Stack<>();
         stack.push(node);

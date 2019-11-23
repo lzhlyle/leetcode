@@ -1,7 +1,10 @@
-package com.lzhlyle.templates;
+package com.lzhlyle.templates.algorithm;
 
 import java.util.*;
 
+/**
+ * 广度优先
+ */
 public class BFS {
     Set<Object> visited = new HashSet<>();
 

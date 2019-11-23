@@ -1,16 +1,27 @@
-package com.lzhlyle.templates;
+package com.lzhlyle.templates.algorithm;
 
 import java.util.*;
 
-public class TwoEnded {
-    public void twoEndedBfsWithQueue(Object beginNode, Object endNode) {
+/**
+ * 双向广度优先搜索
+ */
+public class TwoEndedBfs {
+    /**
+     * 双向广度优先搜索 (入队时标记、出队时标记)
+     *
+     * @param beginNode
+     * @param endNode
+     */
+    public void twoEndedBfs(Object beginNode, Object endNode) {
         Set<Object> visited = new HashSet<>();
 
         Queue<Object> beginQueue = new LinkedList<>();
         beginQueue.add(beginNode);
+        visited.add(beginNode); // 也可在出队后visited.add()
 
         Queue<Object> endQueue = new LinkedList<>();
         endQueue.add(endNode);
+        visited.add(endNode);
 
         // terminator
         while (!beginQueue.isEmpty() && !endQueue.isEmpty()) {
@@ -24,13 +35,24 @@ public class TwoEnded {
             Queue<Object> nextBegin = new LinkedList<>();
             while (!beginQueue.isEmpty()) {
                 Object begin = beginQueue.remove();
-                if (visited.contains(begin)) return; // meet
-                visited.add(begin);
+
+                // 出队时标记已访问
+                // if (visited.contains(begin)) return; // meet;
+                // visited.add(begin);
 
                 // process
                 this._process(begin);
 
-                nextBegin.addAll(this._getChildren(begin));
+                List<Object> children = this._getChildren(begin);
+                for (Object child : children) {
+                    // 入队时标记已访问
+                    if (visited.contains(child)) return; // meet;
+
+                    // pruning..
+
+                    nextBegin.add(child);
+                    visited.add(child);
+                }
             }
 
             // drill down
