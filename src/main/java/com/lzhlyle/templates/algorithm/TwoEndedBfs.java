@@ -7,21 +7,15 @@ import java.util.*;
  */
 public class TwoEndedBfs {
     /**
-     * 双向广度优先搜索 - 循环 (使用入队时标记，可改为出队时标记)
+     * 双向广度优先搜索 - 循环
      *
      * @param beginNode
      * @param endNode
      */
     public void twoEndedBfsWithQueue(Object beginNode, Object endNode) {
-        Set<Object> visited = new HashSet<>();
-
-        Queue<Object> beginQueue = new LinkedList<>();
-        beginQueue.add(beginNode);
-        visited.add(beginNode); // 也可在出队后visited.add()
-
-        Queue<Object> endQueue = new LinkedList<>();
-        endQueue.add(endNode);
-        visited.add(endNode);
+        Set<Object> meets = new HashSet<>(); // nodes that may meet, will be given usually
+        Queue<Object> beginQueue = new LinkedList<>(Collections.singleton(beginNode));
+        Queue<Object> endQueue = new LinkedList<>(Collections.singleton(endNode));
 
         // terminator
         while (!beginQueue.isEmpty() && !endQueue.isEmpty()) {
@@ -33,25 +27,19 @@ public class TwoEndedBfs {
             }
 
             Queue<Object> nextBegin = new LinkedList<>();
+            meets.removeAll(beginQueue);
             while (!beginQueue.isEmpty()) {
                 Object begin = beginQueue.remove();
-
-                // 出队时标记已访问
-                // if (visited.contains(begin)) return; // meet;
-                // visited.add(begin);
 
                 // process
                 this._process(begin);
 
                 List<Object> children = this._getChildren(begin);
                 for (Object child : children) {
-                    // 入队时标记已访问
-                    if (visited.contains(child)) return; // meet;
-
-                    // pruning..
-
+                    // pruning
+                    if (!meets.contains(child)) continue;
+                    if (endQueue.contains(child)) return; // meet, O(n) while looking up
                     nextBegin.add(child);
-                    visited.add(child);
                 }
             }
 
@@ -63,27 +51,21 @@ public class TwoEndedBfs {
     }
 
     /**
-     * 双向广度优先搜索 - 递归 (使用出队时标记，可改为入队时标记)
+     * 双向广度优先搜索 - 递归
      *
      * @param beginNode
      * @param endNode
      */
     public void twoEndedBfsWithRecursion(Object beginNode, Object endNode) {
-        Set<Object> visited = new HashSet<>();
+        Set<Object> meets = new HashSet<>(); // nodes that may meet, will be given usually
+        Set<Object> beginSet = new HashSet<>(Collections.singleton(beginNode));
+        Set<Object> endSet = new HashSet<>(Collections.singleton(endNode));
 
-        Set<Object> beginSet = new HashSet<>();
-        beginSet.add(beginNode);
-        // visited.add(beginNode);
-
-        Set<Object> endSet = new HashSet<>();
-        endSet.add(endNode);
-        // visited.add(endNode);
-
-        this.bfs(0, beginSet, endSet, visited);
+        this.bfs(0, beginSet, endSet, meets);
     }
 
     // bfs recursion
-    private int bfs(int level, Set<Object> beginSet, Set<Object> endSet, Set<Object> visited) {
+    private int bfs(int level, Set<Object> beginSet, Set<Object> endSet, Set<Object> meets) {
         // terminator
         if (beginSet.size() == 0 || endSet.size() == 0) return -1; // cannot find
 
@@ -96,19 +78,22 @@ public class TwoEndedBfs {
             endSet = swap;
         }
         Set<Object> nextBegin = new HashSet<>();
+        meets.removeAll(beginSet);
         for (Object begin : beginSet) {
-            if (visited.contains(begin)) return level; // meet
-
-            // 使用时标记~出队时标记
-            visited.add(begin);
+            // process
+            this._process(begin);
 
             List<Object> children = this._getChildren(begin);
-            // pruning..
-            nextBegin.addAll(children);
+            for (Object child : children) {
+                // pruning
+                if (!meets.contains(child)) continue;
+                if (endSet.contains(child)) return level; // meet, O(1)
+                nextBegin.add(child);
+            }
         }
 
         // drill down
-        return this.bfs(level, nextBegin, endSet, visited);
+        return this.bfs(level, nextBegin, endSet, meets);
 
         // reverse state
     }
