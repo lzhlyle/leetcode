@@ -1,4 +1,4 @@
-package com.lzhlyle.contest;
+package com.lzhlyle.contest.date20191106;
 
 public class Test2 {
     public int climbStairs(int n) {
