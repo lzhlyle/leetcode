@@ -41,6 +41,11 @@ public class BinaryTreeOrder {
         // reverse state
     }
 
+    /**
+     * 后序遍历
+     *
+     * @param root
+     */
     public void postOrder(Object root) {
         // terminator
         if (root == null) return;
