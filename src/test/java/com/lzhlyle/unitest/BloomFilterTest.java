@@ -1,6 +1,6 @@
 package com.lzhlyle.unitest;
 
-import com.lzhlyle.templates.algorithm.BloomFilter;
+import com.lzhlyle.templates.algorithm.cache.BloomFilter;
 import org.junit.Before;
 import org.junit.Test;
 
