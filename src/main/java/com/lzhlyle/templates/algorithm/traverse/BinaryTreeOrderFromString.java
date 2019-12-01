@@ -1,4 +1,4 @@
-package com.lzhlyle.templates.algorithm;
+package com.lzhlyle.templates.algorithm.traverse;
 
 import java.util.LinkedList;
 import java.util.Queue;

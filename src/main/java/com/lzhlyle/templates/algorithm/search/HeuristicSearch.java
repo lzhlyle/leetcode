@@ -1,4 +1,4 @@
-package com.lzhlyle.templates.algorithm;
+package com.lzhlyle.templates.algorithm.search;
 
 /**
  * A*搜索
