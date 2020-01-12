@@ -13,25 +13,23 @@ public class LRUCache {
     }
 
     public int get(int key) {
-        CacheNode node = map.get(key);
-        if (node == null) {
-            return -1; // not find
-        }
+        if (!map.containsKey(key)) return -1; // not find
 
+        CacheNode node = map.get(key);
         this._useOnce(node);
 
         return node.val;
     }
 
     public void put(int key, int value) {
-        CacheNode node = map.get(key);
-        if (node == null) {
+        if (!map.containsKey(key)) {
             // not exist
-            node = new CacheNode(key, value);
+            CacheNode node = new CacheNode(key, value);
             this._useOnce(node);
             map.put(key, node);
         } else {
             // exist
+            CacheNode node = map.get(key);
             node.val = value;
             this._useOnce(node);
         }
