@@ -6,7 +6,7 @@ import java.util.Map;
 public class ClimbStairs {
     private Map<Integer, Integer> cache;
 
-    // fib，倒退，递归，缓存
+    // fib，倒推，递归，缓存
     public int climbStairs(int n) {
         if (n <= 0) return 0;
         if (n <= 2) return n;
