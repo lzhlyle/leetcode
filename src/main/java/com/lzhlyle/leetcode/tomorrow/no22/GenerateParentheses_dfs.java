@@ -1,11 +1,12 @@
-package com.lzhlyle.leetcode.self.no22;
+package com.lzhlyle.leetcode.tomorrow.no22;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class GenerateParentheses {
-    // recursion
+public class GenerateParentheses_dfs {
+    // dfs
     public List<String> generateParenthesis(int n) {
         if (n < 1) return Collections.emptyList();
         if (n == 1) return Collections.singletonList("()");
@@ -24,5 +25,4 @@ public class GenerateParentheses {
         if (leftCnt < max) _generate(max, result, leftCnt + 1, curr + "(");
         if (curr.length() < (leftCnt << 1)) _generate(max, result, leftCnt, curr + ")");
     }
-
 }
