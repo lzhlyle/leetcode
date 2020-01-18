@@ -69,6 +69,21 @@ public class WordLadderII_2_1 {
         // reverse state
     }
 
+    private List<String> _getNeighbors(String word) {
+        List<String> neighbors = new LinkedList<>();
+        char[] arr = word.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            char original = arr[i];
+            for (char j = 'a'; j < 'z'; j++) {
+                if (arr[i] == j) continue;
+                arr[i] = j;
+                neighbors.add(String.valueOf(arr));
+            }
+            arr[i] = original;
+        }
+        return neighbors;
+    }
+
     private void _dfs(String beginWord, String endWord, Map<String, List<String>> neighborsMap,
                       Deque<String> path, List<List<String>> result) {
         // terminator
@@ -96,8 +111,14 @@ public class WordLadderII_2_1 {
     }
 
     public static void main(String[] args) {
-        Object res = new WordLadderII_2_1().findLadders("hit", "cog",
-                Arrays.asList("hit", "hot", "dot", "dog", "lot", "log", "cog"));
+        String beginWord = "qa", endWord = "sq";
+        List<String> wordList = Arrays.asList("si", "go", "se", "cm", "so", "ph", "mt", "db", "mb", "sb", "kr", "ln",
+                "tm", "le", "av", "sm", "ar", "ci", "ca", "br", "ti", "ba", "to", "ra", "fa", "yo", "ow", "sn", "ya",
+                "cr", "po", "fe", "ho", "ma", "re", "or", "rn", "au", "ur", "rh", "sr", "tc", "lt", "lo", "as", "fr",
+                "nb", "yb", "if", "pb", "ge", "th", "pm", "rb", "sh", "co", "ga", "li", "ha", "hz", "no", "bi", "di",
+                "hi", "qa", "pi", "os", "uh", "wm", "an", "me", "mo", "na", "la", "st", "er", "sc", "ne", "mn", "mi",
+                "am", "ex", "pt", "io", "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye");
+        Object res = new WordLadderII_2_1().findLadders(beginWord, endWord, wordList);
         System.out.println(res);
     }
 }
