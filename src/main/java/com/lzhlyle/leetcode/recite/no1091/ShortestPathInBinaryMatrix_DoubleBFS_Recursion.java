@@ -2,30 +2,29 @@ package com.lzhlyle.leetcode.recite.no1091;
 
 import java.util.*;
 
-public class ShortestPathInBinaryMatrix_3 {
+public class ShortestPathInBinaryMatrix_DoubleBFS_Recursion {
     // two-ended bfs
     public int shortestPathBinaryMatrix(int[][] grid) {
         // base condition
-        int maxX = grid.length - 1;
-        int maxY = grid[0].length - 1;
-        if (grid[0][0] == 1 || grid[maxX][maxY] == 1) return -1;
+        int n = grid.length - 1;
+        if (grid[0][0] == 1 || grid[n][n] == 1) return -1;
         if (grid.length == 1) return 1;
 
         Set<Cell> beginSet = new HashSet<>(Collections.singleton(new Cell(0, 0)));
-        boolean[][] beginVisited = new boolean[maxX + 1][maxY + 1];
+        boolean[][] beginVisited = new boolean[n + 1][n + 1];
         beginVisited[0][0] = true;
 
-        Set<Cell> endSet = new HashSet<>(Collections.singleton(new Cell(maxX, maxY)));
-        boolean[][] endVisited = new boolean[maxX + 1][maxY + 1];
-        endVisited[maxX][maxY] = true;
+        Set<Cell> endSet = new HashSet<>(Collections.singleton(new Cell(n, n)));
+        boolean[][] endVisited = new boolean[n + 1][n + 1];
+        endVisited[n][n] = true;
 
         // bfs
-        return this.searchBfs(1, beginSet, endSet, grid, beginVisited, endVisited, maxX, maxY);
+        return this.searchBfs(1, beginSet, endSet, grid, beginVisited, endVisited, n);
     }
 
     // bfs recursion
     private int searchBfs(int step, Set<Cell> beginSet, Set<Cell> endSet, int[][] grid,
-                          boolean[][] beginVisited, boolean[][] endVisited, int maxX, int maxY) {
+                          boolean[][] beginVisited, boolean[][] endVisited, int n) {
         // terminator
         if (beginSet.isEmpty() || endSet.isEmpty()) return -1; // cannot find
 
@@ -41,7 +40,7 @@ public class ShortestPathInBinaryMatrix_3 {
         }
 
         Set<Cell> nextBegin = new HashSet<>();
-        boolean[][] nextVisited = new boolean[maxX + 1][maxY + 1];
+        boolean[][] nextVisited = new boolean[n + 1][n + 1];
         for (Cell begin : beginSet) {
             // flood-fill
             grid[begin.x][begin.y] = 1;
@@ -61,7 +60,7 @@ public class ShortestPathInBinaryMatrix_3 {
         beginVisited = nextVisited;
 
         // drill down
-        return this.searchBfs(step, beginSet, endSet, grid, beginVisited, endVisited, maxX, maxY);
+        return this.searchBfs(step, beginSet, endSet, grid, beginVisited, endVisited, n);
     }
 
     // directions
@@ -98,7 +97,7 @@ public class ShortestPathInBinaryMatrix_3 {
                 {1, 1, 1, 1, 1, 0, 1},
                 {0, 0, 1, 0, 0, 0, 0}
         };
-        int res = new ShortestPathInBinaryMatrix_3().shortestPathBinaryMatrix(grid);
+        int res = new ShortestPathInBinaryMatrix_DoubleBFS_Recursion().shortestPathBinaryMatrix(grid);
         System.out.println(res);
     }
 }

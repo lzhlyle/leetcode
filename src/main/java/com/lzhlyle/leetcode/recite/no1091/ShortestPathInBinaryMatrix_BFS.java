@@ -1,24 +1,18 @@
 package com.lzhlyle.leetcode.recite.no1091;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class ShortestPathInBinaryMatrix_2 {
-    // bfs A* search BUT DO NOT WORK BETTER..so sad
+public class ShortestPathInBinaryMatrix_BFS {
+    // bfs
     public int shortestPathBinaryMatrix(int[][] grid) {
         // base condition
-        int maxX = grid.length - 1;
-        int maxY = grid[0].length - 1;
-        if (grid[0][0] == 1 || grid[maxX][maxY] == 1) return -1;
+        if (grid[0][0] == 1 || grid[grid.length - 1][grid[0].length - 1] == 1) return -1;
         if (grid.length == 1) return 1;
 
         int level = 1;
 
         // bfs
-        PriorityQueue<Cell> nextSteps = new PriorityQueue<>(Comparator.comparingInt(c -> (maxX - c.x + maxY - c.y)));
-        nextSteps.add(new Cell(0, 0));
+        Queue<Cell> nextSteps = new LinkedList<>(Collections.singleton(new Cell(0, 0)));
         grid[0][0] = 1; // visited
         // terminator
         while (!nextSteps.isEmpty()) {
@@ -64,7 +58,7 @@ public class ShortestPathInBinaryMatrix_2 {
         int x;
         int y;
 
-        Cell(int x, int y) {
+        public Cell(int x, int y) {
             this.x = x;
             this.y = y;
         }
@@ -72,13 +66,15 @@ public class ShortestPathInBinaryMatrix_2 {
 
     public static void main(String[] args) {
         int[][] grid = {
-                {0, 1, 0, 1, 0},
-                {1, 0, 0, 0, 1},
-                {0, 0, 1, 1, 1},
-                {0, 0, 0, 0, 0},
-                {1, 0, 1, 0, 0}
+                {0, 0, 1, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0, 1},
+                {0, 0, 1, 0, 1, 0, 0},
+                {0, 0, 0, 1, 1, 1, 0},
+                {1, 0, 0, 1, 1, 0, 0},
+                {1, 1, 1, 1, 1, 0, 1},
+                {0, 0, 1, 0, 0, 0, 0}
         };
-        int res = new ShortestPathInBinaryMatrix_2().shortestPathBinaryMatrix(grid);
+        int res = new ShortestPathInBinaryMatrix_BFS().shortestPathBinaryMatrix(grid);
         System.out.println(res);
     }
 }

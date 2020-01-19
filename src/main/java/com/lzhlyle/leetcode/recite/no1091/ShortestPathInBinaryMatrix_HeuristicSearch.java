@@ -1,18 +1,24 @@
 package com.lzhlyle.leetcode.recite.no1091;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
 
-public class ShortestPathInBinaryMatrix {
-    // bfs
+public class ShortestPathInBinaryMatrix_HeuristicSearch {
+    // bfs A* search BUT DO NOT WORK BETTER..so sad
     public int shortestPathBinaryMatrix(int[][] grid) {
         // base condition
-        if (grid[0][0] == 1 || grid[grid.length - 1][grid[0].length - 1] == 1) return -1;
+        int maxX = grid.length - 1;
+        int maxY = grid[0].length - 1;
+        if (grid[0][0] == 1 || grid[maxX][maxY] == 1) return -1;
         if (grid.length == 1) return 1;
 
         int level = 1;
 
         // bfs
-        Queue<Cell> nextSteps = new LinkedList<>(Collections.singleton(new Cell(0, 0)));
+        PriorityQueue<Cell> nextSteps = new PriorityQueue<>(Comparator.comparingInt(c -> (maxX - c.x + maxY - c.y)));
+        nextSteps.add(new Cell(0, 0));
         grid[0][0] = 1; // visited
         // terminator
         while (!nextSteps.isEmpty()) {
@@ -58,7 +64,7 @@ public class ShortestPathInBinaryMatrix {
         int x;
         int y;
 
-        public Cell(int x, int y) {
+        Cell(int x, int y) {
             this.x = x;
             this.y = y;
         }
@@ -66,15 +72,13 @@ public class ShortestPathInBinaryMatrix {
 
     public static void main(String[] args) {
         int[][] grid = {
-                {0, 0, 1, 0, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0, 1},
-                {0, 0, 1, 0, 1, 0, 0},
-                {0, 0, 0, 1, 1, 1, 0},
-                {1, 0, 0, 1, 1, 0, 0},
-                {1, 1, 1, 1, 1, 0, 1},
-                {0, 0, 1, 0, 0, 0, 0}
+                {0, 1, 0, 1, 0},
+                {1, 0, 0, 0, 1},
+                {0, 0, 1, 1, 1},
+                {0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 0}
         };
-        int res = new ShortestPathInBinaryMatrix().shortestPathBinaryMatrix(grid);
+        int res = new ShortestPathInBinaryMatrix_HeuristicSearch().shortestPathBinaryMatrix(grid);
         System.out.println(res);
     }
 }
