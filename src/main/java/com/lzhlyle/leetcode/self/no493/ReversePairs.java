@@ -22,7 +22,6 @@ public class ReversePairs {
 
     private void merge(int[] src, int[] dest, int start, int mid, int end) {
         int left = start, right = mid + 1;
-
         // count
         while (left <= mid && right <= end) {
             if (src[left] > 2 * (long) src[right]) {
