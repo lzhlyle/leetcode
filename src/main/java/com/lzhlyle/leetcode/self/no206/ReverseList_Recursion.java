@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.self.no206;
 
-public class ReverseList {
+public class ReverseList_Recursion {
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode res = reverseList(head.next);
