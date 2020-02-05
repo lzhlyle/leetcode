@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no239;
+package com.lzhlyle.leetcode.tomorrow.no239;
 
 public class SlidingWindowMaximum_DP {
     public int[] maxSlidingWindow(int[] nums, int k) {
