@@ -1,8 +1,8 @@
-package com.lzhlyle.leetcode.self.no25;
+package com.lzhlyle.leetcode.tomorrow.no25;
 
 public class ReverseNodesInKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
-        if (head == null) return null;
+        if (head == null || head.next == null) return head;
         // look up end node
         ListNode end = head;
         for (int i = 0; i < k; i++) {
