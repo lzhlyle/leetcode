@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class LargestRectangleInHistogram_Stack {
     public int largestRectangleArea(int[] heights) {
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>(); // asc
         stack.push(-1);
         int max = 0, len = heights.length;
         for (int i = 0; i < len; i++) {
