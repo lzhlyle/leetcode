@@ -4,10 +4,8 @@ public class InvertBinaryTree_Recursion {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         TreeNode swap = root.left;
-        root.left = root.right;
-        root.right = swap;
-        invertTree(root.left);
-        invertTree(root.right);
+        root.left = invertTree(root.right);
+        root.right = invertTree(swap);
         return root;
     }
 }
