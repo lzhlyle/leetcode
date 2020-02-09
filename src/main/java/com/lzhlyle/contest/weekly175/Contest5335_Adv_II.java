@@ -1,6 +1,8 @@
 package com.lzhlyle.contest.weekly175;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,6 +29,20 @@ public class Contest5335_Adv_II {
         if (ri == bad.length) {
             max = Math.max(max, count);
             return;
+        }
+
+        List<Integer> possibleIndexes = new LinkedList<>();
+        int possible = size & (~(bad[ri] | lu | ru)); // 1 可坐，0 不可坐
+        for (int i = 0; i < bad.length; i++) {
+            if (((possible >> i) & 1) == 1) possibleIndexes.add(i);
+        }
+
+        // 计算所有currRow的可能
+        List<Integer> currRowIndexes = new LinkedList<>();
+        for (int i = 0; i < possibleIndexes.size(); i++) {
+            for (int j = i + 1; j < possibleIndexes.size(); j++) {
+
+            }
         }
 
         Map<Integer, Integer> currRowMap = new HashMap<>(); // (currRow, count)
