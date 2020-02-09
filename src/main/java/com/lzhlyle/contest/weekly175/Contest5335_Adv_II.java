@@ -1,9 +1,6 @@
 package com.lzhlyle.contest.weekly175;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * https://leetcode-cn.com/problems/maximum-students-taking-exam/
@@ -37,15 +34,16 @@ public class Contest5335_Adv_II {
             if (((possible >> i) & 1) == 1) possibleIndexes.add(i);
         }
 
-        // 计算所有currRow的可能
+        List<List<Integer>> res = new LinkedList<>();
+        subIndex(possibleIndexes, 0, new LinkedList<>(), res);
+
         Map<Integer, Integer> currRowMap = new HashMap<>(); // (currRow, count)
-        for (int i = 0; i < possibleIndexes.size(); i++) {
-            int currRow = 0b0, currPossible = possible, cnt = 0;
-            for (int j = i; j < possibleIndexes.size(); j++) {
-                int possibleIndex = possibleIndexes.get(j);
+        for (List<Integer> possibleIndexList : res) {
+            int currPossible = possible, currRow = 0b0, cnt = 0;
+            for (Integer possibleIndex : possibleIndexList) {
                 if (((currPossible >> possibleIndex) & 1) == 0) continue;
-                cnt++;
                 currRow |= (1 << possibleIndex);
+                cnt++;
                 currPossible &= (~(currRow | (currRow << 1) | (currRow >> 1)));
             }
             currRowMap.put(currRow, cnt);
@@ -56,7 +54,29 @@ public class Contest5335_Adv_II {
         }
     }
 
+    private void subIndex(List<Integer> possibleIndexes, int i, List<Integer> curr, List<List<Integer>> res) {
+        if (i >= possibleIndexes.size()) {
+            res.add(curr);
+            return;
+        }
+        subIndex(possibleIndexes, i + 1, curr, res);
+        curr.add(possibleIndexes.get(i));
+        subIndex(possibleIndexes, i + 1, new LinkedList<>(curr), res);
+    }
+
+    private void _subArr(int[] arr, int i, List<Integer> curr) {
+        if (i >= arr.length) {
+            System.out.println(curr);
+            return;
+        }
+        _subArr(arr, i + 1, new LinkedList<>(curr));
+        curr.add(arr[i]);
+        _subArr(arr, i + 1, new LinkedList<>(curr));
+    }
+
     public static void main(String[] args) {
+//        new Contest5335_Adv_II()._subArr(new int[]{1, 2, 3}, 0, new LinkedList<>());
+
         // [[".",".","#",".","."],[".",".",".",".","#"],[".","#","#","#","."],[".","#","#","#","."]]
         {
             char[][] seats = {{'.', '.', '#', '.', '.'},
