@@ -5,7 +5,7 @@ package com.lzhlyle.contest.weekly175;
  * <p>
  * 5335. 参加考试的最大学生数
  */
-public class Contest4 {
+public class Contest5335 {
     private int max = 0;
 
     // wrong
@@ -50,7 +50,7 @@ public class Contest4 {
                     {'.', '.', '.', '#'},
                     {'.', '.', '.', '.'},
                     {'#', '.', '#', '#'}};
-            int res = new Contest4().maxStudents(seats);
+            int res = new Contest5335().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 5);
         }
@@ -59,7 +59,7 @@ public class Contest4 {
         {
             char[][] seats = {{'#', '.', '.'},
                     {'.', '#', '.'}};
-            int res = new Contest4().maxStudents(seats);
+            int res = new Contest5335().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 3);
         }
@@ -68,7 +68,7 @@ public class Contest4 {
             char[][] seats = {{'#', '.', '#', '#', '.', '#'},
                     {'.', '#', '#', '#', '#', '.'},
                     {'#', '.', '#', '#', '.', '#'}};
-            int res = new Contest4().maxStudents(seats);
+            int res = new Contest5335().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 4);
         }
@@ -78,7 +78,7 @@ public class Contest4 {
                     {'#', '.'},
                     {'#', '#'},
                     {'.', '#'}};
-            int res = new Contest4().maxStudents(seats);
+            int res = new Contest5335().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 3);
         }
@@ -88,7 +88,7 @@ public class Contest4 {
                     {'.', '.', '#', '.', '.'},
                     {'.', '#', '.', '#', '.'},
                     {'#', '.', '.', '.', '#'}};
-            int res = new Contest4().maxStudents(seats);
+            int res = new Contest5335().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 10);
         }

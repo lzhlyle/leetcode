@@ -39,7 +39,7 @@ package com.lzhlyle.contest.biweekly19;
  *
  */
 
-public class Contest1 {
+public class Contest5311 {
     public int numberOfSteps(int num) {
         int count = 0;
         while (num != 0) {

@@ -44,7 +44,7 @@ package com.lzhlyle.contest.biweekly19;
  *
  */
 
-public class Contest2 {
+public class Contest5312 {
     public int numOfSubarrays(int[] arr, int k, int threshold) {
         int count = 0;
         for (int i = 0; i < arr.length - k + 1; i++) {
@@ -56,7 +56,7 @@ public class Contest2 {
     }
 
     public static void main(String[] args) {
-        Contest2 contest2 = new Contest2();
+        Contest5312 contest2 = new Contest5312();
         {
             int res = contest2.numOfSubarrays(new int[]{2, 2, 2, 2, 5, 5, 5, 8}, 3, 4);
             System.out.println(res);

@@ -10,7 +10,7 @@ import java.util.Set;
  * 5332. 检查整数及其两倍数是否存在
  */
 
-public class Contest1 {
+public class Contest5332 {
     public boolean checkIfExist(int[] arr) {
         Arrays.sort(arr);
         Set<Integer> set = new HashSet<>();
@@ -27,7 +27,7 @@ public class Contest1 {
     }
 
     public static void main(String[] args) {
-        Contest1 contest = new Contest1();
+        Contest5332 contest = new Contest5332();
         // [4,-7,11,4,18]
         {
             int[] arr = new int[]{4, -7, 11, 4, 18};

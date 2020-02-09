@@ -15,7 +15,7 @@ package com.lzhlyle.contest.biweekly19;
  *
  */
 
-public class Contest3 {
+public class Contest5313 {
     public double angleClock(int hour, int minutes) {
         if (hour >= 12) hour -= 12;
         double minAngle = (360 / 60) * minutes;
@@ -25,7 +25,7 @@ public class Contest3 {
     }
 
     public static void main(String[] args) {
-        Contest3 contest3 = new Contest3();
+        Contest5313 contest3 = new Contest5313();
         {
             double res = contest3.angleClock(1, 57);
             System.out.println(res);

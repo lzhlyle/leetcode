@@ -50,7 +50,7 @@ import java.util.*;
  * 1 <= arr.length <= 5 * 10^4
  * -10^8 <= arr[i] <= 10^8
  */
-public class Contest4 {
+public class Contest5314 {
     // bfs
     public int minJumps(int[] arr) {
         int len = arr.length;
@@ -93,7 +93,7 @@ public class Contest4 {
     }
 
     public static void main(String[] args) {
-        Contest4 contest4 = new Contest4();
+        Contest5314 contest4 = new Contest5314();
         {
             int res = contest4.minJumps(new int[]{100, -23, -23, 404, 100, 23, 23, 23, 3, 404});
             System.out.println(res);

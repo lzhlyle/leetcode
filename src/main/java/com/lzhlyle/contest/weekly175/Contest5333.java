@@ -5,7 +5,7 @@ package com.lzhlyle.contest.weekly175;
  *
  * 5333. 制造字母异位词的最小步骤数
  */
-public class Contest2 {
+public class Contest5333 {
     public int minSteps(String s, String t) {
         int[] sFreq = new int[26], tFreq = new int[26];
         int len = s.length();
@@ -24,7 +24,7 @@ public class Contest2 {
     }
 
     public static void main(String[] args) {
-        Contest2 contest = new Contest2();
+        Contest5333 contest = new Contest5333();
         {
             String s = "bab", t = "aba";
             int res = contest.minSteps(s, t);

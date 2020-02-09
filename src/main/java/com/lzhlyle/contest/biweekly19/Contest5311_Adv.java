@@ -38,7 +38,7 @@ package com.lzhlyle.contest.biweekly19;
  * 0 <= num <= 10^6
  */
 
-public class Contest1_Adv {
+public class Contest5311_Adv {
     public int numberOfSteps(int num) {
         if (num == 0) return 0;
         if ((num & 1) == 1) return numberOfSteps(num - 1) + 1;
