@@ -5,7 +5,7 @@ package com.lzhlyle.contest.weekly175;
  * <p>
  * 5335. 参加考试的最大学生数
  */
-public class Contest5335 {
+public class Contest5335_Adv {
     private int max = 0;
 
     // wrong
@@ -17,39 +17,49 @@ public class Contest5335 {
                 if (seats[r][c] == '#') bad[r] |= (1 << (cols - 1 - c));
             }
         }
-        locate((1 << cols) - 1, bad, 0, 0b0, 0b0, 0);
+        locateRow((1 << cols) - 1, bad, 0, 0b0, 0b0, 0);
         return max;
     }
 
-    private void locate(int size, int[] bad, int ri, int lu, int ru, int count) {
+    private void locateRow(int size, int[] bad, int ri, int lu, int ru, int count) {
         if (ri == bad.length) {
             max = Math.max(max, count);
             return;
         }
 
-        // 此排不再坐，直接下一排
-        locate(size, bad, ri + 1, 0b0, 0b0, count);
-
         int possible = size & (~(bad[ri] | lu | ru)); // 1 可坐，0 不可坐
-        int positions = 0b0; // 1 已坐，0 未坐
+        locateCol(size, bad, ri, count, possible, 0b0, true);
+        locateCol(size, bad, ri, count, possible, 0b0, false);
+    }
 
-        while (possible != 0) {
-            // 坐最右开始
+    private void locateCol(int size, int[] bad, int ri, int count, int possible, int positions, boolean isSeat) {
+        if (possible == 0) {
+            locateRow(size, bad, ri + 1, positions >> 1, positions << 1, count); // 下一排;
+            return;
+        }
+
+        if (isSeat) {
+            count++;
             positions |= (possible & (-possible));
             possible &= possible - 1;
             possible &= (~((positions << 1) | (positions >> 1)));
-            count++;
-            locate(size, bad, ri + 1, positions >> 1, positions << 1, count); // 下一排
+        } else {
+            possible &= possible - 1;
         }
+        locateCol(size, bad, ri, count, possible, positions, true);
+        locateCol(size, bad, ri, count, possible, positions, false);
     }
 
     public static void main(String[] args) {
+        // [[".",".",".",".","#",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],
+        // [".",".",".",".",".",".","#","."],[".",".",".",".",".",".",".","."],[".",".","#",".",".",".",".","."],
+        // [".",".",".",".",".",".",".","."],[".",".",".","#",".",".","#","."]]
         {
-            char[][] seats = {{'#', '#', '#', '.'},
-                              {'#', '#', '#', '#'},
-                              {'.', '.', '.', '.'},
-                              {'.', '.', '.', '.'}};
-            int res = new Contest5335().maxStudents(seats);
+            char[][] seats = {{'.', '.', '.', '.', '#', '.', '.', '.'}, {'.', '.', '.', '.', '.', '.', '.', '.'},
+                    {'.', '.', '.', '.', '.', '.', '.', '.'}, {'.', '.', '.', '.', '.', '.', '#', '.'},
+                    {'.', '.', '.', '.', '.', '.', '.', '.'}, {'.', '.', '#', '.', '.', '.', '.', '.'},
+                    {'.', '.', '.', '.', '.', '.', '.', '.'}, {'.', '.', '.', '#', '.', '.', '#', '.'}};
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
         }
 
@@ -59,7 +69,7 @@ public class Contest5335 {
                     {'.', '.', '.', '#'},
                     {'.', '.', '.', '.'},
                     {'#', '.', '#', '#'}};
-            int res = new Contest5335().maxStudents(seats);
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 5);
         }
@@ -68,7 +78,7 @@ public class Contest5335 {
         {
             char[][] seats = {{'#', '.', '.'},
                     {'.', '#', '.'}};
-            int res = new Contest5335().maxStudents(seats);
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 3);
         }
@@ -77,7 +87,7 @@ public class Contest5335 {
             char[][] seats = {{'#', '.', '#', '#', '.', '#'},
                     {'.', '#', '#', '#', '#', '.'},
                     {'#', '.', '#', '#', '.', '#'}};
-            int res = new Contest5335().maxStudents(seats);
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 4);
         }
@@ -87,7 +97,7 @@ public class Contest5335 {
                     {'#', '.'},
                     {'#', '#'},
                     {'.', '#'}};
-            int res = new Contest5335().maxStudents(seats);
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 3);
         }
@@ -97,7 +107,7 @@ public class Contest5335 {
                     {'.', '.', '#', '.', '.'},
                     {'.', '#', '.', '#', '.'},
                     {'#', '.', '.', '.', '#'}};
-            int res = new Contest5335().maxStudents(seats);
+            int res = new Contest5335_Adv().maxStudents(seats);
             System.out.println(res);
             System.out.println(res == 10);
         }
