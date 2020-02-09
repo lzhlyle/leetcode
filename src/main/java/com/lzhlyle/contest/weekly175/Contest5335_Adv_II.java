@@ -1,7 +1,7 @@
 package com.lzhlyle.contest.weekly175;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,37 +31,25 @@ public class Contest5335_Adv_II {
             return;
         }
 
-        List<Integer> possibleIndexes = new LinkedList<>();
+        List<Integer> possibleIndexes = new ArrayList<>(); // [0,1,3,6,8]
         int possible = size & (~(bad[ri] | lu | ru)); // 1 可坐，0 不可坐
         for (int i = 0; i < bad.length; i++) {
             if (((possible >> i) & 1) == 1) possibleIndexes.add(i);
         }
 
         // 计算所有currRow的可能
-        List<Integer> currRowIndexes = new LinkedList<>();
-        for (int i = 0; i < possibleIndexes.size(); i++) {
-            for (int j = i + 1; j < possibleIndexes.size(); j++) {
-
-            }
-        }
-
         Map<Integer, Integer> currRowMap = new HashMap<>(); // (currRow, count)
-
-//        int possible = size & (~(bad[ri] | lu | ru)); // 1 可坐，0 不可坐
-//
-//        for (int i = 0; i < bad.length; i++) {
-//            int poss = possible;
-//            int currRow = 0b0;
-//            int cnt = 0;
-//            while (poss != 0) {
-//                cnt++;
-//                int pos = (poss & (-poss));
-//                poss &= poss - 1;
-//                poss &= (~((pos << 1) | (pos >> 1)));
-//                currRow |= pos;
-//            }
-//            currRowMap.put(currRow, cnt);
-//        }
+        for (int i = 0; i < possibleIndexes.size(); i++) {
+            int currRow = 0b0, currPossible = possible, cnt = 0;
+            for (int j = i; j < possibleIndexes.size(); j++) {
+                int possibleIndex = possibleIndexes.get(j);
+                if (((currPossible >> possibleIndex) & 1) == 0) continue;
+                cnt++;
+                currRow |= (1 << possibleIndex);
+                currPossible &= (~(currRow | (currRow << 1) | (currRow >> 1)));
+            }
+            currRowMap.put(currRow, cnt);
+        }
 
         for (Integer currRow : currRowMap.keySet()) {
             locateRow(size, bad, ri + 1, currRow << 1, currRow >> 1, currRowMap.get(currRow)); // 下一排;
