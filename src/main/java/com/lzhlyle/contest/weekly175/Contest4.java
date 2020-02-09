@@ -2,7 +2,7 @@ package com.lzhlyle.contest.weekly175;
 
 /**
  * https://leetcode-cn.com/problems/maximum-students-taking-exam/
- *
+ * <p>
  * 5335. 参加考试的最大学生数
  */
 public class Contest4 {
@@ -17,31 +17,29 @@ public class Contest4 {
                 if (seats[r][c] == '#') bad[r] |= (1 << (cols - 1 - c));
             }
         }
-        locate((1 << cols) - 1, bad, 0, 0b0, 0b0, 0, 0b0);
+        locate((1 << cols) - 1, bad, 0, 0b0, 0b0, 0);
         return max;
     }
 
-    private void locate(int size, int[] bad, int ri, int lu, int ru, int count, int r) {
+    private void locate(int size, int[] bad, int ri, int lu, int ru, int count) {
         if (ri == bad.length) {
             max = Math.max(max, count);
             return;
         }
 
-        int possible = size & (~(bad[ri] | lu | ru | r)); // 1 可坐，0 不可坐
-        int positions = r; // 1 已坐，0 未坐
-
         // 此排不再坐，直接下一排
-        locate(size, bad, ri + 1, positions >> 1, positions << 1, count, 0b0); // 下一排
+        locate(size, bad, ri + 1, 0b0, 0b0, count);
+
+        int possible = size & (~(bad[ri] | lu | ru)); // 1 可坐，0 不可坐
+        int positions = 0b0; // 1 已坐，0 未坐
 
         while (possible != 0) {
-            int tmp = positions | (possible & (-possible)); // 最右的位置不坐
-            locate(size, bad, ri, lu, ru, count, tmp);
-
-            positions = tmp; // 坐最右开始
+            // 坐最右开始
+            positions |= (possible & (-possible));
             possible &= possible - 1;
             possible &= (~((positions << 1) | (positions >> 1)));
             count++;
-            locate(size, bad, ri + 1, positions >> 1, positions << 1, count, 0b0); // 下一排
+            locate(size, bad, ri + 1, positions >> 1, positions << 1, count); // 下一排
         }
     }
 
@@ -54,7 +52,7 @@ public class Contest4 {
                     {'#', '.', '#', '#'}};
             int res = new Contest4().maxStudents(seats);
             System.out.println(res);
-            assert res == 5;
+            System.out.println(res == 5);
         }
 
         // {{'#','.','.'},{'.','#','.'}}
@@ -63,7 +61,7 @@ public class Contest4 {
                     {'.', '#', '.'}};
             int res = new Contest4().maxStudents(seats);
             System.out.println(res);
-            assert res == 3;
+            System.out.println(res == 3);
         }
 
         {
@@ -72,7 +70,7 @@ public class Contest4 {
                     {'#', '.', '#', '#', '.', '#'}};
             int res = new Contest4().maxStudents(seats);
             System.out.println(res);
-            assert res == 4;
+            System.out.println(res == 4);
         }
         {
             char[][] seats = {{'.', '#'},
@@ -82,7 +80,7 @@ public class Contest4 {
                     {'.', '#'}};
             int res = new Contest4().maxStudents(seats);
             System.out.println(res);
-            assert res == 3;
+            System.out.println(res == 3);
         }
         {
             char[][] seats = {{'#', '.', '.', '.', '#'},
@@ -92,7 +90,7 @@ public class Contest4 {
                     {'#', '.', '.', '.', '#'}};
             int res = new Contest4().maxStudents(seats);
             System.out.println(res);
-            assert res == 10;
+            System.out.println(res == 10);
         }
     }
 }
