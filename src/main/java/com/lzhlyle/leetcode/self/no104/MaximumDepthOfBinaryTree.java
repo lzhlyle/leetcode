@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no104;
+package com.lzhlyle.leetcode.self.no104;
 
 public class MaximumDepthOfBinaryTree {
     public int maxDepth(TreeNode root) {
