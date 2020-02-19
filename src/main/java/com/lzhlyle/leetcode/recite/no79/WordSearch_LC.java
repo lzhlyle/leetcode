@@ -17,7 +17,7 @@ public class WordSearch_LC {
                 }
             }
         }
-        return dfs(word, 0, 0, 0);
+        return false;
     }
 
     public boolean dfs(String word, int wi, int x, int y) {
