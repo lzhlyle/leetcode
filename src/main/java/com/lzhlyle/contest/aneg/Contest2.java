@@ -1,4 +1,4 @@
-package com.lzhlyle.contest.eg;
+package com.lzhlyle.contest.aneg;
 
 public class Contest2 {
 
