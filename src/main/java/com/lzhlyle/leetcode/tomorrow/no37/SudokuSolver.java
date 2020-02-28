@@ -8,8 +8,8 @@ public class SudokuSolver {
             for (int j = 0; j < 9; j++) {
                 char c = board[i][j];
                 if (c == '.') continue;
-                int k = c - '1';
-                row[i][k] = col[j][k] = cube[(i / 3) * 3 + (j / 3)][k] = true;
+                int chi = c - '1';
+                row[i][chi] = col[j][chi] = cube[(i / 3) * 3 + (j / 3)][chi] = true;
             }
         }
         assign(board, 0);
