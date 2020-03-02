@@ -1,0 +1,17 @@
+package com.lzhlyle.leetcode.week.no115;
+
+public class DistinctSubsequences_DP_Adv {
+    public int numDistinct(String s, String t) {
+        int slen = s.length(), tlen = t.length();
+        int[] dp = new int[tlen + 1];
+        for (int si = 0; si < slen; si++) {
+            int northwest = 1;
+            for (int ti = 0; ti < tlen; ti++) {
+                int next = dp[ti + 1];
+                if (s.charAt(si) == t.charAt(ti)) dp[ti + 1] += northwest; // 西北
+                northwest = next;
+            }
+        }
+        return dp[tlen];
+    }
+}
