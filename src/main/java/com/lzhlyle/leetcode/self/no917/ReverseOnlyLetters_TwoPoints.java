@@ -4,7 +4,8 @@ public class ReverseOnlyLetters_TwoPoints {
     public String reverseOnlyLetters(String S) {
         char[] arr = S.toCharArray();
         int len = arr.length, l = -1, r = len;
-        while (l++ > r--) {
+        if (len < 2) return S;
+        while (l++ < r--) {
             while (l < r && !valid(arr[l])) l++;
             while (l < r && !valid(arr[r])) r--;
             if (l < r) {
