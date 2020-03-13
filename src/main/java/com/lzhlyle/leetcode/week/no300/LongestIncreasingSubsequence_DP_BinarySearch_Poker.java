@@ -13,11 +13,12 @@ public class LongestIncreasingSubsequence_DP_BinarySearch_Poker {
         return cnt;
     }
 
-    private int _searchGroup(int[] groups, int target, int cnt) {
-        int left = 0, right = cnt;
+    // search first index larger then target
+    private int _searchGroup(int[] arr, int target, int end) {
+        int left = 0, right = end;
         while (left < right) {
             int mid = left + ((right - left) >> 1);
-            if (groups[mid] < target) left = mid + 1;
+            if (arr[mid] < target) left = mid + 1;
             else right = mid;
         }
         return left;
