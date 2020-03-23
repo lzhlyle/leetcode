@@ -96,14 +96,47 @@ public class BitOperation {
 
     @Test
     public void swapTest() {
-        int a = 8108;
-        int b = 234;
+//        int a = 8108;
+//        int b = 234;
+//        a ^= b;
+//        b ^= a;
+//        a ^= b;
+//        System.out.println(a);
+//        System.out.println(b);
 
-        a ^= b;
-        b ^= a;
-        a ^= b;
+//        int[] arr = {1, 2, 1, 3, 1};
+//        System.out.println(Arrays.toString(arr));
+//        for (int len = arr.length, l = 0, r = len - 1; l <= r; l++, r--) {
+//            arr[l] ^= arr[r];
+//            arr[r] ^= arr[l];
+//            arr[l] ^= arr[r];
+//        }
+//        System.out.println(Arrays.toString(arr));
 
-        System.out.println(a);
-        System.out.println(b);
+        // 加减法交换（java溢出也没关系，循环的，能算回来）
+        {
+            int x = Integer.MAX_VALUE, y = Integer.MAX_VALUE - 1;
+            System.out.println(x + ", " + y);
+            x = x + y;
+            y = x - y;
+            x = x - y;
+            System.out.println(x + ", " + y);
+        }
+        {
+            int x = Integer.MIN_VALUE, y = Integer.MIN_VALUE + 1;
+            System.out.println(x + ", " + y);
+            x = x - y;
+            y = x + y;
+            x = y - x;
+            System.out.println(x + ", " + y);
+        }
+    }
+
+    // 方法是值传递，否则会有问题自己异或自己得0的问题——指向同一个地址，两个都变0
+    // 此方法毫无任何作用
+    private void swap(int a, int b) {
+        a = a ^ b;
+        b = b ^ a;
+        a = a ^ b;
     }
 }
