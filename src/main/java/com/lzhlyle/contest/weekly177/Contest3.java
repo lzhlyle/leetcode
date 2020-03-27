@@ -16,7 +16,7 @@ public class Contest3 {
         while (left < right) {
             int i = left + ((right - left) >> 1);
             if ((num + 1) % i == 0 || (num + 2) % i == 0) {
-                // todo
+                //
             }
         }
 
