@@ -6,12 +6,16 @@ public class MergeKSortedLists_MergeTwo_DC {
         return merge(lists, 0, lists.length - 1);
     }
 
+    // T(n) = 2T(n/2) + O(k)
     private ListNode merge(ListNode[] lists, int li, int ri) {
         if (li >= ri) return lists[li];
         int mid = li + ((ri - li) >> 1);
-        return mergeTwo(merge(lists, li, mid), merge(lists, mid + 1, ri));
+        ListNode a = merge(lists, li, mid);
+        ListNode b = merge(lists, mid + 1, ri);
+        return mergeTwo(a, b);
     }
 
+    // O(min(lenA, lenB))
     private ListNode mergeTwo(ListNode a, ListNode b) {
         if (a == null) return b;
         if (b == null) return a;
