@@ -2,7 +2,8 @@ package com.lzhlyle.leetcode.recite.no56;
 
 import java.util.Arrays;
 
-public class MergeIntervals {
+public class MergeIntervals_MergeSort {
+    // 9ms
     public int[][] merge(int[][] intervals) {
         if (intervals.length <= 0) return intervals;
 
@@ -58,7 +59,7 @@ public class MergeIntervals {
 
     public static void main(String[] args) {
         int[][] intervals = {{1, 4}, {2, 3}};
-        int[][] res = new MergeIntervals().merge(intervals);
+        int[][] res = new MergeIntervals_MergeSort().merge(intervals);
         System.out.println(Arrays.deepToString(res));
     }
 }
