@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no205;
+package com.lzhlyle.leetcode.week.no205;
 
 public class IsomorphicStrings_Array_LC {
     public boolean isIsomorphic(String s, String t) {
