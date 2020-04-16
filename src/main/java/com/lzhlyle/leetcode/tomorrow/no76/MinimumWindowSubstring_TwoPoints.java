@@ -1,17 +1,17 @@
-package com.lzhlyle.leetcode.self.no76;
+package com.lzhlyle.leetcode.tomorrow.no76;
 
 public class MinimumWindowSubstring_TwoPoints {
     // two points
     // O(n+m)
     public String minWindow(String s, String t) {
-        int slen = s.length(), tlen = t.length();
         char[] sarr = s.toCharArray(), tarr = t.toCharArray();
+        int slen = sarr.length, tlen = tarr.length;
 
         int[] need = new int[256], hire = new int[256];
         for (char c : tarr) need[c] = ++hire[c];
-        int expected = tarr.length;
+        int expected = tlen;
 
-        int l = 0, r = l, len = 0, minL = l, minLen = len, min = Integer.MAX_VALUE;
+        int l = 0, r = l, len = 0, minL = l, minLen = slen + 1; // minLen: unreachable value
         while (l < slen - tlen + 1 && r < slen) {
             if (len < r - l + 1) {
                 int hiring = sarr[r];
@@ -26,20 +26,13 @@ public class MinimumWindowSubstring_TwoPoints {
             len = r - l + 1;
             if (expected > 0) r++;
             else {
-                if (len < min) {
-                    min = len;
-                    minL = l;
+                if (len < minLen) {
                     minLen = len;
+                    minL = l;
                 }
                 l++;
             }
         }
-        return min == Integer.MAX_VALUE ? "" : new String(sarr, minL, minLen);
-    }
-
-    public static void main(String[] args) {
-        String S = "aaaaaaaaaaaabbbbbcdd", T = "abcdd";
-        String res = new MinimumWindowSubstring_TwoPoints().minWindow(S, T);
-        System.out.println(res);
+        return minLen == slen + 1 ? "" : new String(sarr, minL, minLen);
     }
 }
