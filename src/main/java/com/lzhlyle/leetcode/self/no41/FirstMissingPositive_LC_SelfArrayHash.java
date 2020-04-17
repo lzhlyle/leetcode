@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.self.no41;
 
-public class FirstMissingPositive_LC_ArrayHash {
+public class FirstMissingPositive_LC_SelfArrayHash {
     public int firstMissingPositive(int[] nums) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
