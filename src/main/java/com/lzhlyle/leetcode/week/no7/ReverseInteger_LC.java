@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no7;
+package com.lzhlyle.leetcode.week.no7;
 
 public class ReverseInteger_LC {
     public int reverse(int x) {
