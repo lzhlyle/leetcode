@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no914;
+package com.lzhlyle.leetcode.week.no914;
 
 public class XOfAKindInADeckOfCards {
     public boolean hasGroupsSizeX(int[] deck) {
