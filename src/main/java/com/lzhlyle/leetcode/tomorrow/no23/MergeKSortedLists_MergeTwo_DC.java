@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no23;
+package com.lzhlyle.leetcode.tomorrow.no23;
 
 public class MergeKSortedLists_MergeTwo_DC {
     public ListNode mergeKLists(ListNode[] lists) {
