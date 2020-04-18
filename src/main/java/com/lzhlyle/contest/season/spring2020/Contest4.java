@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Contest4 {
-    // tle: last?
     // bfs
     public int minJump(int[] jump) {
         int n = jump.length;
