@@ -11,7 +11,7 @@ public class Contest3 {
             for (int i = 0; i < 4; i++) {
                 if (freq[arr[i] - 'a'] < freq[arr[i + 1] - 'a']) return -1;
             }
-            if (c == 'c') res = Math.max(res, ++cnt);
+            if (c == 'c') res = Math.max(res, ++cnt); // 最多的同时发声
             else if (c == 'k') cnt--;
         }
         // 总数应相同
