@@ -1,6 +1,6 @@
 package com.lzhlyle.templates.structure;
 
-class TrieNode {
+public class TrieNode {
     private TrieNode[] links;
     private boolean isEnd;
 

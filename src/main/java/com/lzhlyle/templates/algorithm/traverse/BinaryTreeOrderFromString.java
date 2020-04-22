@@ -108,12 +108,12 @@ public class BinaryTreeOrderFromString {
         // reverse state
     }
 
-    public static void main(String[] args) {
-        String preOrder = "ABD#EF####CG#I##HJ###";
-
-//        TreeNode root = new BinaryTreeOrderFromString().getTreeWithPreOrder(preOrder);
-        TreeNode root = new BinaryTreeOrderFromString().getTreeRecursionByPreOrder(preOrder);
-
-        System.out.println(root);
-    }
+//    public static void main(String[] args) {
+//        String preOrder = "ABD#EF####CG#I##HJ###";
+//
+////        TreeNode root = new BinaryTreeOrderFromString().getTreeWithPreOrder(preOrder);
+//        TreeNode root = new BinaryTreeOrderFromString().getTreeRecursionByPreOrder(preOrder);
+//
+//        System.out.println(root);
+//    }
 }

@@ -32,9 +32,9 @@ public class QuickSort {
         return counter;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {9, 1, 4, 3, 6, 8, 5, 2, 3, 4, 7, 9, 6, 2, 3, 1, 4, 6, 7, 0, 9, 5};
-        QuickSort.quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
-    }
+//    public static void main(String[] args) {
+//        int[] arr = {9, 1, 4, 3, 6, 8, 5, 2, 3, 4, 7, 9, 6, 2, 3, 1, 4, 6, 7, 0, 9, 5};
+//        QuickSort.quickSort(arr, 0, arr.length - 1);
+//        System.out.println(Arrays.toString(arr));
+//    }
 }
