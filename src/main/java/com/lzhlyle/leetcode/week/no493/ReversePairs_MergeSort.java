@@ -37,9 +37,4 @@ public class ReversePairs_MergeSort {
         while (j <= r) temp[k++] = arr[j++];
         System.arraycopy(temp, 0, arr, l, r - l + 1);
     }
-
-    public static void main(String[] args) {
-        int res = new ReversePairs_MergeSort().reversePairs(new int[]{1, 3, 2, 3, 1, 3, 4, 2});
-        System.out.println(res);
-    }
 }
