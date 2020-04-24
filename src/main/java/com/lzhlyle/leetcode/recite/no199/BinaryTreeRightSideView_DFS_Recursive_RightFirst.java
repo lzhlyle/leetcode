@@ -1,7 +1,5 @@
 package com.lzhlyle.leetcode.recite.no199;
 
-import com.lzhlyle.leetcode.self.no199.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
