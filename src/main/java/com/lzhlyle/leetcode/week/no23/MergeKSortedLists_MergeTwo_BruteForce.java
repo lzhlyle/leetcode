@@ -6,9 +6,11 @@ import java.util.List;
 
 public class MergeKSortedLists_MergeTwo_BruteForce {
     // O(nlog(n)), O(n)
+    // n = all nodes count
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) return null;
         List<Integer> list = new LinkedList<>();
+        // O(n)
         for (ListNode l : lists) {
             while (l != null) {
                 list.add(l.val);
