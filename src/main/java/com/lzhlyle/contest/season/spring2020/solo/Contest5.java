@@ -1,4 +1,4 @@
-package com.lzhlyle.contest.season.spring2020;
+package com.lzhlyle.contest.season.spring2020.solo;
 
 public class Contest5 {
     // dp[l] vs dp[r]
