@@ -5,7 +5,7 @@ import java.util.*;
 public class Contest3 {
     private int[] dx = {1, 0}, dy = {0, 1};
 
-    // wa
+    // tle O(n)??
     public int[] findDiagonalOrder(List<List<Integer>> nums) {
         // 预处理，补0
         int m = nums.size(), n = 0;

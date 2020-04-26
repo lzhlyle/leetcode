@@ -3,7 +3,7 @@ package com.lzhlyle.contest.weekly186;
 public class Contest4 {
     // wa
     // dp
-    // 每隔 <= k 个
+    // 每隔 <= k 个：错误！可以只取一个值
     public int constrainedSubsetSum(int[] nums, int k) {
         int n = nums.length;
         int[][] dp = new int[n][2]; // 0不包括i，1包括i
