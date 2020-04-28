@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.recite.no645;
 
-public class SetMismatch {
+public class SetMismatch_Bitwise {
     public int[] findErrorNums(int[] nums) {
         int xor = 0b0, n = nums.length;
         for (int num : nums) xor ^= num;
