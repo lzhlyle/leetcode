@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no56;
+package com.lzhlyle.leetcode.week.no56;
 
 public class MergeIntervals_BruteForce {
     // brute force 1ms
