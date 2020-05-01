@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SymmetricTree_Bfs_Iterate {
+public class SymmetricTree_Bfs_Iteration {
     // bfs iterate
     public boolean isSymmetric(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
