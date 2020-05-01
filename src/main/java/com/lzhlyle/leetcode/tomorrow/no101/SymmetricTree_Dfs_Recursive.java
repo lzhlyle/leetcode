@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no101;
+package com.lzhlyle.leetcode.tomorrow.no101;
 
 public class SymmetricTree_Dfs_Recursive {
     // dfs recursive
