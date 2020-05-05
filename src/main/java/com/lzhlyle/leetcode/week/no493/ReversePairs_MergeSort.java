@@ -21,7 +21,7 @@ public class ReversePairs_MergeSort {
         int[] temp = new int[r - l + 1];
         int i = l, j = mid + 1;
         while (i <= mid && j <= r) {
-            if (arr[i] > 2 * (long) arr[j]) {
+            if (arr[i] > 2L * arr[j]) {
                 cnt += mid - i + 1;
                 j++;
             } else i++;
