@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.lcof51;
+package com.lzhlyle.leetcode.tomorrow.lcof51;
 
 public class ShuZuZhongDeNiXuDuiLcof_MergeSort {
     // merge sort O(nlog(n))
