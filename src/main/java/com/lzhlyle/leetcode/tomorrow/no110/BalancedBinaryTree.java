@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no110;
+package com.lzhlyle.leetcode.tomorrow.no110;
 
 public class BalancedBinaryTree {
     private boolean isBalanced;
