@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no1406;
+package com.lzhlyle.leetcode.tomorrow.no1406;
 
 public class StoneGameIii_DP_BottomUp {
     // dp
