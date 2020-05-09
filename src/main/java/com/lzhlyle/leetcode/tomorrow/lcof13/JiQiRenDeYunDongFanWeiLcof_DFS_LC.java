@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.lcof13;
+package com.lzhlyle.leetcode.tomorrow.lcof13;
 
 public class JiQiRenDeYunDongFanWeiLcof_DFS_LC {
     private int cnt;
