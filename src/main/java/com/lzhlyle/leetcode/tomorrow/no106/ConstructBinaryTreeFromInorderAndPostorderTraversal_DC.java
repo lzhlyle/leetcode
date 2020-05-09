@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no106;
+package com.lzhlyle.leetcode.tomorrow.no106;
 
 import java.util.HashMap;
 import java.util.Map;
