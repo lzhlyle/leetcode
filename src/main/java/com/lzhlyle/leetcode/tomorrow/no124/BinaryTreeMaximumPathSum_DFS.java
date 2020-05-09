@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no124;
+package com.lzhlyle.leetcode.tomorrow.no124;
 
 public class BinaryTreeMaximumPathSum_DFS {
     private int max;
