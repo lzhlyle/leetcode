@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no3;
+package com.lzhlyle.leetcode.tomorrow.no3;
 
 public class LongestSubstringWithoutRepeatingCharacters_TwoPoints {
     public int lengthOfLongestSubstring(String s) {

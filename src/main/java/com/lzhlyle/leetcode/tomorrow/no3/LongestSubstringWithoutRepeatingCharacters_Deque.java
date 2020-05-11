@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no3;
+package com.lzhlyle.leetcode.tomorrow.no3;
 
 import java.util.Deque;
 import java.util.HashSet;
