@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no2;
+package com.lzhlyle.leetcode.tomorrow.no2;
 
 public class AddTwoNumbers_Iteration {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
