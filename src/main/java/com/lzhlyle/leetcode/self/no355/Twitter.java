@@ -102,15 +102,4 @@ public class Twitter {
         reg(followeeId);
         userFollowsMap.get(followerId).remove(followeeId);
     }
-
-    public static void main(String[] args) {
-        Twitter twitter = new Twitter();
-        twitter.postTweet(1, 5);
-        twitter.follow(1, 2);
-        twitter.follow(2, 1);
-        twitter.getNewsFeed(2);
-        twitter.postTweet(2, 6);
-        twitter.getNewsFeed(1);
-        twitter.getNewsFeed(2);
-    }
 }
