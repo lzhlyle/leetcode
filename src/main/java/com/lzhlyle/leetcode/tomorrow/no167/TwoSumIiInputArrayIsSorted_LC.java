@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no167;
+package com.lzhlyle.leetcode.tomorrow.no167;
 
 public class TwoSumIiInputArrayIsSorted_LC {
     public int[] twoSum(int[] numbers, int target) {
