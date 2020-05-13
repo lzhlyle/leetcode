@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no733;
+package com.lzhlyle.leetcode.tomorrow.no733;
 
 public class FloodFill_DFS {
     private static final int[] dx = {-1, 0, 1, 0}, dy = {0, -1, 0, 1};
