@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no402;
+package com.lzhlyle.leetcode.tomorrow.no402;
 
 public class RemoveKDigits_ASC_Array {
     public String removeKdigits(String num, int k) {

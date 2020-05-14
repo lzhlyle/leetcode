@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no402;
+package com.lzhlyle.leetcode.tomorrow.no402;
 
 import java.util.Deque;
 import java.util.LinkedList;
