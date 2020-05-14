@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no645;
+package com.lzhlyle.leetcode.week.no645;
 
 public class SetMismatch_LC_ArrayHashTable {
     public static int[] findErrorNums(int[] nums) {
