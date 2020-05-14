@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no137;
+package com.lzhlyle.leetcode.week.no137;
 
 public class SingleNumberIi_Bitwise {
     public int singleNumber(int[] nums) {
