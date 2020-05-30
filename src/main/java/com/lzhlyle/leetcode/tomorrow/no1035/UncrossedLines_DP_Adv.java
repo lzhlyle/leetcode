@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no1035;
+package com.lzhlyle.leetcode.tomorrow.no1035;
 
 public class UncrossedLines_DP_Adv {
     // 同最长公共子序列 1143
