@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no703;
+package com.lzhlyle.leetcode.week.no703;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
