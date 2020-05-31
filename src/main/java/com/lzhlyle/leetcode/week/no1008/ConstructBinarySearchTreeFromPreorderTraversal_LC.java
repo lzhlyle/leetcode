@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no1008;
+package com.lzhlyle.leetcode.week.no1008;
 
 public class    ConstructBinarySearchTreeFromPreorderTraversal_LC {
     private int i; // 全局变量
