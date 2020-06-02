@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no542;
+package com.lzhlyle.leetcode.week.no542;
 
 import java.util.LinkedList;
 import java.util.Queue;
