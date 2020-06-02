@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no415;
+package com.lzhlyle.leetcode.week.no415;
 
 public class AddStrings {
     public String addStrings(String num1, String num2) {
