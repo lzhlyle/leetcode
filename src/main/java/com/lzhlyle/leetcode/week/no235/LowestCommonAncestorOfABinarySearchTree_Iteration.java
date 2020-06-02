@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no235;
+package com.lzhlyle.leetcode.week.no235;
 
 public class LowestCommonAncestorOfABinarySearchTree_Iteration {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
