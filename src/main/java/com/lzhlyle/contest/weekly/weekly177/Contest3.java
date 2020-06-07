@@ -48,12 +48,12 @@ public class Contest3 {
             System.out.println(Arrays.toString(res));
         }
 //        {
-//            Contest3 contest = new Contest3();
+//            BrowserHistory contest = new BrowserHistory();
 //            int[] res = contest.closestDivisors(123);
 //            System.out.println(Arrays.toString(res));
 //        }
 //        {
-//            Contest3 contest = new Contest3();
+//            BrowserHistory contest = new BrowserHistory();
 //            int[] res = contest.closestDivisors(999);
 //            System.out.println(Arrays.toString(res));
 //        }
