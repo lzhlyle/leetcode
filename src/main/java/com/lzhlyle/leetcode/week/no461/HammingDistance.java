@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no461;
+package com.lzhlyle.leetcode.week.no461;
 
 public class HammingDistance {
     public int hammingDistance(int x, int y) {
