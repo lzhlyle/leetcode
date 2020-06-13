@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no918;
+package com.lzhlyle.leetcode.week.no918;
 
 public class MaximumSumCircularSubarray {
     public int maxSubarraySumCircular(int[] A) {
