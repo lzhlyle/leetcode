@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no328;
+package com.lzhlyle.leetcode.week.no328;
 
 public class OddEvenLinkedList {
     public ListNode oddEvenList(ListNode head) {
