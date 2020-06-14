@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no234;
+package com.lzhlyle.leetcode.week.no234;
 
 public class PalindromeLinkedList_LC_Reverse {
     // 反转前半段 O(n), O(1)
