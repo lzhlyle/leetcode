@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no1248;
+package com.lzhlyle.leetcode.week.no1248;
 
 public class CountNumberOfNiceSubarrays_LC_PrefixSum {
     public int numberOfSubarrays(int[] nums, int k) {
