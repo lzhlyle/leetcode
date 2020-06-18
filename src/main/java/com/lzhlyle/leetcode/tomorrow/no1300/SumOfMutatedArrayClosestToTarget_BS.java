@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no1300;
+package com.lzhlyle.leetcode.tomorrow.no1300;
 
 public class SumOfMutatedArrayClosestToTarget_BS {
     public int findBestValue(int[] arr, int target) {
