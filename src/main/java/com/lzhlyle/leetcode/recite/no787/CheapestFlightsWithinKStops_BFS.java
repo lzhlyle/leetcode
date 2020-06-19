@@ -14,7 +14,7 @@ public class CheapestFlightsWithinKStops_BFS {
             set[from].add(to);
         }
 
-        int[] costs = new int[n];
+        int[] costs = new int[n]; // dp
         Arrays.fill(costs, Integer.MAX_VALUE);
         costs[src] = 0;
 
