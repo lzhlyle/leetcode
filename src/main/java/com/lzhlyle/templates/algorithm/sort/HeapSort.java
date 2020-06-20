@@ -27,10 +27,4 @@ public class HeapSort {
         arr[top] = swap;
         heapify(arr, len, max);
     }
-
-//    public static void main(String[] args) {
-//        int[] arr = {9, 1, 4, 3, 6, 8, 5, 2, 3, 4, 7, 9, 6, 2, 3, 1, 4, 6, 7, 0, 9, 5};
-//        HeapSort.heapSort(arr);
-//        System.out.println(Arrays.toString(arr));
-//    }
 }
