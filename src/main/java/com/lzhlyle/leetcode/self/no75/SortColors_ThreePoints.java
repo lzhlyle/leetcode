@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no75;
+package com.lzhlyle.leetcode.self.no75;
 
 public class SortColors_ThreePoints {
     public void sortColors(int[] nums) {
