@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no139;
+package com.lzhlyle.leetcode.self.no139;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

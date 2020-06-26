@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no139;
+package com.lzhlyle.leetcode.self.no139;
 
 import java.util.HashSet;
 import java.util.List;
