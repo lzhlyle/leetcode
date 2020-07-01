@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no35;
+package com.lzhlyle.leetcode.week.no35;
 
 public class SearchInsertPosition_BS {
     public int searchInsert(int[] nums, int target) {
