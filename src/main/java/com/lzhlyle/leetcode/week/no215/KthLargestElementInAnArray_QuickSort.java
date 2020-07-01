@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no215;
+package com.lzhlyle.leetcode.week.no215;
 
 import java.util.Random;
 
