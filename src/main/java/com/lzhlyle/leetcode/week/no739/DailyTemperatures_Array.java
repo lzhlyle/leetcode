@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no739;
+package com.lzhlyle.leetcode.week.no739;
 
 public class DailyTemperatures_Array {
     public int[] dailyTemperatures(int[] T) {

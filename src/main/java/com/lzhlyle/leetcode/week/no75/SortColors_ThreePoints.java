@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no75;
+package com.lzhlyle.leetcode.week.no75;
 
 public class SortColors_ThreePoints {
     public void sortColors(int[] nums) {

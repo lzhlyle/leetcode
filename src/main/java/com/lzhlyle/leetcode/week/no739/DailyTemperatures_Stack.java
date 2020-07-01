@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no739;
+package com.lzhlyle.leetcode.week.no739;
 
 import java.util.Stack;
 
