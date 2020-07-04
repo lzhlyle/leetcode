@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no108;
+package com.lzhlyle.leetcode.self.no108;
 
 public class TreeNode {
     int val;
