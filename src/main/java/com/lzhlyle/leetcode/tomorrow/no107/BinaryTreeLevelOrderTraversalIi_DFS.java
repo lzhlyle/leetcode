@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no107;
+package com.lzhlyle.leetcode.tomorrow.no107;
 
 import java.util.ArrayList;
 import java.util.Collections;
