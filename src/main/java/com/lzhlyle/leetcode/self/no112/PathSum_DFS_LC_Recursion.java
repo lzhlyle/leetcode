@@ -1,7 +1,5 @@
 package com.lzhlyle.leetcode.self.no112;
 
-import com.lzhlyle.leetcode.recite.no112.TreeNode;
-
 public class PathSum_DFS_LC_Recursion {
     public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) return false;
