@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no112;
+package com.lzhlyle.leetcode.tomorrow.no112;
 
 public class PathSum_DFS_Recursion {
     public boolean hasPathSum(TreeNode root, int sum) {

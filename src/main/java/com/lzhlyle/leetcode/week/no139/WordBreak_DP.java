@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no139;
+package com.lzhlyle.leetcode.week.no139;
 
 import java.util.HashSet;
 import java.util.List;
