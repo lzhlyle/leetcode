@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.recite.no287;
 
-public class FindTheDuplicateNumber {
+public class FindTheDuplicateNumber_TwoPoints {
     public int findDuplicate(int[] nums) {
         int fast = 0, slow = 0;
         do {
