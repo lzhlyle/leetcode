@@ -1,6 +1,6 @@
-package com.lzhlyle.leetcode.self.no837;
+package com.lzhlyle.leetcode.tomorrow.no837;
 
-public class New21Game {
+public class New21Game_DP {
     public double new21Game(int N, int K, int W) {
         double[] dp = new double[K + W];
         double sum = 0d;
