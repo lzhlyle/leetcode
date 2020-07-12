@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no107;
+package com.lzhlyle.leetcode.week.no107;
 
 import java.util.*;
 
