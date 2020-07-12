@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no83;
+package com.lzhlyle.leetcode.week.no83;
 
 public class RemoveDuplicatesFromSortedList_Iteration {
     public ListNode deleteDuplicates(ListNode head) {
