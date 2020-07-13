@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no174;
+package com.lzhlyle.leetcode.tomorrow.no174;
 
 public class DungeonGame_DP {
     public int calculateMinimumHP(int[][] dungeon) {
