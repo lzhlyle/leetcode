@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no628;
+package com.lzhlyle.leetcode.tomorrow.no628;
 
 public class MaximumProductOfThreeNumbers_Min2_Max3 {
     public int maximumProduct(int[] nums) {
