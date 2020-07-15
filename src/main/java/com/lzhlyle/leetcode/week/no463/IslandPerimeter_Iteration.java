@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no463;
+package com.lzhlyle.leetcode.week.no463;
 
 public class IslandPerimeter_Iteration {
     public int islandPerimeter(int[][] grid) {

@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no209;
+package com.lzhlyle.leetcode.week.no209;
 
 public class MinimumSizeSubarraySum_SlideWindow {
     // slide-window: O(n)
