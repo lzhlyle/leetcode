@@ -2,8 +2,7 @@ package com.lzhlyle.leetcode.tomorrow.lcci1713;
 
 import java.util.Arrays;
 
-public class ReSpaceLcci_DP_Trie_Adv_III {
-    // reverse trie
+public class ReSpaceLcci_DP_Trie {
     public int respace(String[] dictionary, String sentence) {
         Trie trie = new Trie();
         for (String word : dictionary)
@@ -13,18 +12,14 @@ public class ReSpaceLcci_DP_Trie_Adv_III {
         char[] arr = sentence.toCharArray();
 
         int[] dp = new int[n + 1]; // before i
-        Arrays.fill(dp, n);
+        Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
 
-        for (int i = 1; i <= n; i++) {
-            dp[i] = dp[i - 1] + 1; // default unknown
-            // substring: [j, i)
-            TrieNode curr = trie.root;
-            for (int j = i - 1; j >= 0; j--) { // faster
-                curr = curr.get(arr[j]);
-                if (curr == null) break; // pruning
-                if (curr.isEnd()) dp[i] = Math.min(dp[i], dp[j]);
-                if (dp[i] == 0) break; // pruning
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (trie.searchWord(arr, j, i))
+                    dp[i] = Math.min(dp[i], dp[j]);
+                else dp[i] = Math.min(dp[i], dp[j] + i - j);
             }
         }
         return dp[n];
@@ -32,23 +27,29 @@ public class ReSpaceLcci_DP_Trie_Adv_III {
 
 
     class Trie {
-        TrieNode root;
+        private TrieNode root;
 
         Trie() {
             root = new TrieNode();
         }
 
-        // reverse insert
         public void insert(String word) {
             TrieNode curr = root;
-            char[] arr = word.toCharArray();
-            int n = arr.length;
-            for (int i = n - 1; i >= 0; i--) {
-                char c = arr[i];
+            for (char c : word.toCharArray()) {
                 if (!curr.contains(c)) curr.set(c, new TrieNode());
                 curr = curr.get(c);
             }
             curr.setEnd();
+        }
+
+        public boolean searchWord(char[] arr, int l, int r) {
+            TrieNode curr = root;
+            for (int i = l; i < r; i++) {
+                char c = arr[i];
+                if (!curr.contains(c)) return false;
+                curr = curr.get(c);
+            }
+            return curr.isEnd();
         }
     }
 
