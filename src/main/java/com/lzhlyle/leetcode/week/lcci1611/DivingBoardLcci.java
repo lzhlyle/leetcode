@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.lcci1611;
+package com.lzhlyle.leetcode.week.lcci1611;
 
 public class DivingBoardLcci {
     public int[] divingBoard(int s, int l, int k) {
