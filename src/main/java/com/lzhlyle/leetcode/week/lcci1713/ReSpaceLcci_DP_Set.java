@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.lcci1713;
+package com.lzhlyle.leetcode.week.lcci1713;
 
 import java.util.Arrays;
 import java.util.HashSet;
