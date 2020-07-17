@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.tomorrow.no287;
 
-public class FindTheDuplicateNumber_TwoPoints {
+public class FindTheDuplicateNumber_FastSlowPoints {
     public int findDuplicate(int[] nums) {
         int fast = 0, slow = 0;
         do {
