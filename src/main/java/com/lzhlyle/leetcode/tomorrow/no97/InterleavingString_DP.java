@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no97;
+package com.lzhlyle.leetcode.tomorrow.no97;
 
 public class InterleavingString_DP {
     public boolean isInterleave(String s1, String s2, String s3) {
