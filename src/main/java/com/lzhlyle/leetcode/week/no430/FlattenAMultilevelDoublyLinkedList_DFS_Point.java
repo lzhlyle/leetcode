@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no430;
+package com.lzhlyle.leetcode.week.no430;
 
 public class FlattenAMultilevelDoublyLinkedList_DFS_Point {
     public Node flatten(Node head) {
