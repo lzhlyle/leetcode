@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no128;
+package com.lzhlyle.leetcode.self.no128;
 
 import java.util.HashMap;
 import java.util.Map;
