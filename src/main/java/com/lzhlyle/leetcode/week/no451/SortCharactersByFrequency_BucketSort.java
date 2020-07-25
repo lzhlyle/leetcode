@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no451;
+package com.lzhlyle.leetcode.week.no451;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no1025;
+package com.lzhlyle.leetcode.tomorrow.no1025;
 
 public class DivisorGame_DP {
     public boolean divisorGame(int n) {
