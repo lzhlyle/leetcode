@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.lcof46;
+package com.lzhlyle.leetcode.week.lcof46;
 
 public class BaShuZiFanYiChengZiFuChuanLcof_DP {
     public int translateNum(int num) {
