@@ -1,10 +1,10 @@
-package com.lzhlyle.leetcode.self.no797;
+package com.lzhlyle.leetcode.tomorrow.no797;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class AllPathsFromSourceToTarget {
+public class AllPathsFromSourceToTarget_DFS {
     public List<List<Integer>> allPathsSourceTarget(int[][] g) {
         List<List<Integer>> res = new ArrayList<>();
         Stack<Integer> curr = new Stack<>();
