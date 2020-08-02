@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.lcof11;
+package com.lzhlyle.leetcode.week.lcof11;
 
 public class XuanZhuanShuZuDeZuiXiaoShuZiLcof {
     public int minArray(int[] arr) {
