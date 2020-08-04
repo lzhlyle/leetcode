@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no95;
+package com.lzhlyle.leetcode.week.no95;
 
 public class TreeNode {
     int val;
