@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class AllPathsFromSourceToTarget {
+public class AllPathsFromSourceToTarget_DFS {
     public List<List<Integer>> allPathsSourceTarget(int[][] g) {
         List<List<Integer>> res = new ArrayList<>();
         Stack<Integer> curr = new Stack<>();
@@ -14,7 +14,7 @@ public class AllPathsFromSourceToTarget {
     }
 
     private void dfs(int i, int[][] g, Stack<Integer> curr, List<List<Integer>> res) {
-        if (g[i].length == 0) {
+        if (i == g.length - 1) {
             res.add(new ArrayList<>(curr));
             return;
         }

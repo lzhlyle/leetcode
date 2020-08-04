@@ -14,7 +14,7 @@ public class AllPathsFromSourceToTarget_DFS {
     }
 
     private void dfs(int i, int[][] g, Stack<Integer> curr, List<List<Integer>> res) {
-        if (g[i].length == 0) {
+        if (i == g.length - 1) {
             res.add(new ArrayList<>(curr));
             return;
         }
