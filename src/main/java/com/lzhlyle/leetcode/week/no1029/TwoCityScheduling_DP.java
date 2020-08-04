@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.tomorrow.no1029;
+package com.lzhlyle.leetcode.week.no1029;
 
 public class TwoCityScheduling_DP {
     // O(n/2 * n/2)
