@@ -3,7 +3,7 @@ package com.lzhlyle.leetcode.tomorrow.no990;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SatisfiabilityOfEqualityEquations_UnionSet {
+public class SatisfiabilityOfEqualityEquations_UnionFind {
     public boolean equationsPossible(String[] equations) {
         List<char[]> notEquals = new ArrayList<>();
         UnionFind uf = new UnionFind(26);
