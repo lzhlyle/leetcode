@@ -1,6 +1,6 @@
 package com.lzhlyle.leetcode.self.no342;
 
-public class PowerOfFour {
+public class PowerOfFour_Sqrt {
     public boolean isPowerOfFour(int num) {
         if (num == 0) return false;
         int sq = (int) Math.sqrt(num);
