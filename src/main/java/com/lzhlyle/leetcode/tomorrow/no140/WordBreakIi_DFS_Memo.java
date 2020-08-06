@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no140;
+package com.lzhlyle.leetcode.tomorrow.no140;
 
 import java.util.*;
 
