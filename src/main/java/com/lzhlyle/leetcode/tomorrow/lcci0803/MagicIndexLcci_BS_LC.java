@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.lcci0803;
+package com.lzhlyle.leetcode.tomorrow.lcci0803;
 
 public class MagicIndexLcci_BS_LC {
     public int findMagicIndex(int[] nums) {
