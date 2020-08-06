@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no343;
+package com.lzhlyle.leetcode.tomorrow.no343;
 
 public class IntegerBreak_DP_Adv {
     public int integerBreak(int n) {
