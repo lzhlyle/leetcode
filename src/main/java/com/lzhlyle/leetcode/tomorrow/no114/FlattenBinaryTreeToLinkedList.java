@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no114;
+package com.lzhlyle.leetcode.tomorrow.no114;
 
 public class FlattenBinaryTreeToLinkedList {
     public void flatten(TreeNode root) {

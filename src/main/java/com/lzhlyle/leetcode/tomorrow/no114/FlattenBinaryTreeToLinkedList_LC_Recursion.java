@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no114;
+package com.lzhlyle.leetcode.tomorrow.no114;
 
 public class FlattenBinaryTreeToLinkedList_LC_Recursion {
     private TreeNode pre = null;
