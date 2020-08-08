@@ -16,7 +16,7 @@ public class RecoverBinarySearchTree_Recursion {
         if (curr == null) return false;
         if (dfs(curr.left)) return true;
         if (prev != null && curr.val < prev.val) {
-            bad2 = curr; // 当前这个有问题
+            bad2 = curr; // 当前这个可能有问题
             if (bad1 == null) bad1 = prev; // 首次遇到，前一个肯定有问题
             else return true; // 再次遇到，剪枝结束
         }
