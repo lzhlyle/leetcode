@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no168;
+package com.lzhlyle.leetcode.tomorrow.no168;
 
 public class ExcelSheetColumnTitle {
     public String convertToTitle(int n) {
