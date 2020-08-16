@@ -1,6 +1,6 @@
-package com.lzhlyle.leetcode.tomorrow.no99;
+package com.lzhlyle.leetcode.week.no99;
 
-public class RecoverBinarySearchTree_Iteration {
+public class RecoverBinarySearchTree_Morris_Iteration {
     // Morris Traversal
     public void recoverTree(TreeNode root) {
         TreeNode prev = null, bad1 = null, bad2 = null;
