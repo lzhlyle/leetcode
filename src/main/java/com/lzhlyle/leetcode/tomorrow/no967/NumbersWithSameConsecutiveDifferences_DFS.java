@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no967;
+package com.lzhlyle.leetcode.tomorrow.no967;
 
 import java.util.Arrays;
 
