@@ -2,7 +2,7 @@ package com.lzhlyle.leetcode.tomorrow.no967;
 
 import java.util.Arrays;
 
-public class NumbersWithSameConsecutiveDifferences_DP_Array {
+public class NumbersWithSameConsecutiveDifferences_BFS_Iteration {
     public int[] numsSameConsecDiff(int n, int k) {
         int[] dp = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int len = dp.length;

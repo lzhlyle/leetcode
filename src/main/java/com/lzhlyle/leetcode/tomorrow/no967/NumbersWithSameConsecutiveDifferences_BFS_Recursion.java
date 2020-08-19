@@ -2,12 +2,12 @@ package com.lzhlyle.leetcode.tomorrow.no967;
 
 import java.util.Arrays;
 
-public class NumbersWithSameConsecutiveDifferences_DFS {
+public class NumbersWithSameConsecutiveDifferences_BFS_Recursion {
     public int[] numsSameConsecDiff(int n, int k) {
-        return dfs(1, n, k, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 10);
+        return bfs(1, n, k, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 10);
     }
 
-    private int[] dfs(int i, int n, int k, int[] curr, int len) {
+    private int[] bfs(int i, int n, int k, int[] curr, int len) {
         if (i == n) return Arrays.copyOfRange(curr, 0, len);
         int[] res = new int[len * 2];
         int ri = 0;
@@ -19,6 +19,6 @@ public class NumbersWithSameConsecutiveDifferences_DFS {
                 if (k > 0 && d - k >= 0) res[ri++] = v * 10 + d - k;
             }
         }
-        return dfs(i + 1, n, k, res, ri);
+        return bfs(i + 1, n, k, res, ri);
     }
 }
