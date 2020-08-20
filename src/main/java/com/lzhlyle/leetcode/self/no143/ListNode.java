@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no143;
+package com.lzhlyle.leetcode.self.no143;
 
 public class ListNode {
     int val;
