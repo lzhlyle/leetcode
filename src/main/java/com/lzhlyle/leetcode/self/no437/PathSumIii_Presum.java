@@ -18,7 +18,7 @@ public class PathSumIii_Presum {
         map.put(curr, map.getOrDefault(curr, 0) + 1);
         cnt += dfs(node.left, map, sum, curr);
         cnt += dfs(node.right, map, sum, curr);
-        map.put(curr, map.getOrDefault(curr, 0) - 1);
+        map.put(curr, map.getOrDefault(curr, 0) - 1); // bt: 向左的前缀和，不能算入向右的前缀和
 
         return cnt;
     }
