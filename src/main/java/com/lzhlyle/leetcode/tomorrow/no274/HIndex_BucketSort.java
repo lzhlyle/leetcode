@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no274;
+package com.lzhlyle.leetcode.tomorrow.no274;
 
 public class HIndex_BucketSort {
     public int hIndex(int[] citations) {
