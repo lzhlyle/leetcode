@@ -21,6 +21,25 @@ public class Contest3 {
         return cnt + move + minOperations(nums);
     }
 
+    // O(32n)
+//    public int minOperations(int[] nums) {
+//        int cnt = 0, max = nums[0];
+//        // 共多少个 1
+//        for (int v : nums) {
+//            max = Math.max(max, v);
+//            while (v != 0) {
+//                cnt++;
+//                v &= v - 1;
+//            }
+//        }
+//        // 最大多少位
+//        while (max != 0) {
+//            cnt++;
+//            max >>>= 1;
+//        }
+//        return cnt - 1;
+//    }
+
     public static void main(String[] args) {
         Contest3 contest = new Contest3();
         {
