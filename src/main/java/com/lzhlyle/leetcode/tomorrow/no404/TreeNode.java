@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no404;
+package com.lzhlyle.leetcode.tomorrow.no404;
 
 public class TreeNode {
     int val;
