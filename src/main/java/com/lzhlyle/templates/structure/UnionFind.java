@@ -4,40 +4,38 @@ package com.lzhlyle.templates.structure;
  * 并查集
  */
 public class UnionFind {
-    // independent union count
     private int count = 0;
     private int[] parent;
 
     public UnionFind(int n) {
-        count = n; // all independent
+        count = n;
         parent = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = i; // initial
         }
     }
 
-    public void union(int p, int q) {
+    public boolean union(int p, int q) {
+        if (p == q) return false;
         int rootP = find(p);
         int rootQ = find(q);
-        if (rootP == rootQ) return;
+        if (rootP == rootQ) return false;
 
         parent[rootP] = rootQ;
         count--;
+        return true;
     }
 
     public int find(int p) {
         int root = p;
-
-        // looking for root
-        while (root != parent[root]) { // terminator
-            root = parent[root]; // drill down
+        while (root != parent[root]) {
+            root = parent[root];
         }
 
-        // compressing path
-        while (p != parent[p]) { // terminator
+        while (p != parent[p]) {
             int x = p;
-            p = parent[p]; // drill down
-            parent[x] = root; // compress path
+            p = parent[p];
+            parent[x] = root;
         }
         return root;
     }
