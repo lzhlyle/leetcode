@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no1286;
+package com.lzhlyle.leetcode.tomorrow.no1286;
 
 public class CombinationIterator {
     private char[] arr;
