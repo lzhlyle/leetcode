@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.self.no546;
+package com.lzhlyle.leetcode.tomorrow.no546;
 
 public class RemoveBoxes_DP {
     // dp
