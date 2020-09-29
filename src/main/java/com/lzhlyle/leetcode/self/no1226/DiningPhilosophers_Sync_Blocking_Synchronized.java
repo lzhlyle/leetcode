@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no1226;
+package com.lzhlyle.leetcode.self.no1226;
 
 public class DiningPhilosophers_Sync_Blocking_Synchronized {
     // 全场只有一个人能吃

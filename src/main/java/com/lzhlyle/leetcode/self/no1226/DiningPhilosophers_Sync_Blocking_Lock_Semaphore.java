@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no1226;
+package com.lzhlyle.leetcode.self.no1226;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
