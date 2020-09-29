@@ -1,4 +1,4 @@
-package com.lzhlyle.leetcode.recite.no1195;
+package com.lzhlyle.leetcode.self.no1195;
 
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
