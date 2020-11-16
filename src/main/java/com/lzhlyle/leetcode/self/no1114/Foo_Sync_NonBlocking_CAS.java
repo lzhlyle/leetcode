@@ -15,14 +15,16 @@ public class Foo_Sync_NonBlocking_CAS {
     }
 
     public void second(Runnable printSecond) throws InterruptedException {
-        while (expected != 2) ;
+        while (expected != 2)
+            Thread.yield();
         // printSecond.run() outputs "second". Do not change or remove this line.
         printSecond.run();
         expected = 3;
     }
 
     public void third(Runnable printThird) throws InterruptedException {
-        while (expected != 3) ;
+        while (expected != 3)
+            Thread.yield();
         // printThird.run() outputs "third". Do not change or remove this line.
         printThird.run();
     }
