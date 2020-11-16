@@ -18,7 +18,8 @@ public class FizzBuzz_Sync_NonBlocking_CAS {
     // printFizz.run() outputs "fizz".
     public void fizz(Runnable printFizz) throws InterruptedException {
         while (true) {
-            while (i <= n && expected != 1) ;
+            while (i <= n && expected != 1)
+                Thread.yield();
             if (i > n) return;
 
             printFizz.run();
@@ -30,7 +31,8 @@ public class FizzBuzz_Sync_NonBlocking_CAS {
     // printBuzz.run() outputs "buzz".
     public void buzz(Runnable printBuzz) throws InterruptedException {
         while (true) {
-            while (i <= n && expected != 2) ;
+            while (i <= n && expected != 2)
+                Thread.yield();
             if (i > n) return;
 
             printBuzz.run();
@@ -42,7 +44,8 @@ public class FizzBuzz_Sync_NonBlocking_CAS {
     // printFizzBuzz.run() outputs "fizzbuzz".
     public void fizzbuzz(Runnable printFizzBuzz) throws InterruptedException {
         while (true) {
-            while (i <= n && expected != 3) ;
+            while (i <= n && expected != 3)
+                Thread.yield();
             if (i > n) return;
 
             printFizzBuzz.run();
@@ -54,7 +57,8 @@ public class FizzBuzz_Sync_NonBlocking_CAS {
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void number(IntConsumer printNumber) throws InterruptedException {
         while (true) {
-            while (i <= n && expected != 0) ;
+            while (i <= n && expected != 0)
+                Thread.yield();
             if (i > n) return;
 
             if (i % 15 == 0) expected = 3;
